@@ -4,199 +4,157 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NELSON MEDIA</title>
-  <meta name="description" content="NELSON MEDIA - TikTok LIVE, video na mawasiliano ya WhatsApp.">
-
+  <meta name="description" content="NELSON MEDIA - Videos, TikTok LIVE, WhatsApp na taarifa.">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #080b10;
-      color: #fff;
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Arial,sans-serif;background:#071012;color:#fff;
+      line-height:1.5
     }
-    .container { width: min(920px, 92%); margin: auto; }
-
-    header {
-      padding: 55px 20px 35px;
-      text-align: center;
-      background: linear-gradient(135deg, #111827, #080b10);
-      border-bottom: 1px solid #26303d;
+    header{
+      padding:28px 18px;text-align:center;
+      background:linear-gradient(135deg,#101c20,#0b3030);
+      border-bottom:1px solid #1d4545
     }
-    .logo {
-      width: 82px; height: 82px; margin: 0 auto 15px;
-      border-radius: 50%;
-      display: grid; place-items: center;
-      background: #fff; color: #080b10;
-      font-weight: 900; font-size: 25px;
+    header h1{margin:0;font-size:34px}
+    header p{margin:7px 0 0;color:#b9d1d1}
+    nav{
+      display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+      padding:14px;background:#091719;position:sticky;top:0;z-index:5
     }
-    h1 { font-size: clamp(32px, 8vw, 58px); letter-spacing: 2px; }
-    .tagline { color: #aeb8c6; margin-top: 8px; }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin: 25px 0;
+    nav a{
+      color:#fff;text-decoration:none;padding:9px 13px;border-radius:20px;
+      background:#123235;font-size:14px
     }
-    .btn {
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      padding: 14px 16px;
-      border-radius: 12px;
-      font-weight: 700;
-      color: white;
-      background: #151c26;
-      border: 1px solid #303b4b;
-      transition: .2s;
+    main{max-width:900px;margin:auto;padding:20px}
+    .hero,.card{
+      background:#0d1b1e;border:1px solid #214044;border-radius:18px;
+      padding:20px;margin-bottom:18px
     }
-    .btn:hover { transform: translateY(-2px); }
-    .live { background: #e91e63; border-color: #e91e63; }
-    .wa { background: #128c4a; border-color: #128c4a; }
-
-    section { padding: 32px 0; }
-    .title { font-size: 27px; margin-bottom: 15px; }
-    .card {
-      background: #10151d;
-      border: 1px solid #293341;
-      border-radius: 18px;
-      padding: 20px;
-      margin-bottom: 18px;
+    .hero{text-align:center;padding:32px 20px}
+    .hero h2{font-size:28px;margin:0 0 8px}
+    .buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-block;text-decoration:none;color:#fff;background:#167a78;
+      padding:11px 17px;border-radius:10px;font-weight:bold
     }
-    .live-box {
-      text-align: center;
-      padding: 28px 18px;
-      background: linear-gradient(135deg, #1a1118, #10151d);
+    .btn.whatsapp{background:#168b4a}
+    .btn.tiktok{background:#222}
+    h2{margin-top:0}
+    .video-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px
     }
-    .live-dot {
-      display: inline-block;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: #ff1744;
-      margin-right: 7px;
-      box-shadow: 0 0 12px #ff1744;
+    video{
+      width:100%;border-radius:12px;background:#000;display:block
     }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+    .empty{
+      padding:25px;text-align:center;border:1px dashed #386064;
+      border-radius:14px;color:#a9c0c0
     }
-    video {
-      width: 100%;
-      border-radius: 13px;
-      background: #000;
-      display: block;
+    input[type=file]{
+      width:100%;padding:13px;background:#091719;color:#fff;
+      border:1px solid #31575b;border-radius:10px
     }
-    .video-title { margin-top: 10px; font-weight: bold; }
-    .small { color: #9ba7b6; font-size: 14px; }
-
-    footer {
-      text-align: center;
-      padding: 35px 15px;
-      border-top: 1px solid #26303d;
-      color: #8d98a7;
-    }
-
-    @media (max-width: 500px) {
-      header { padding-top: 40px; }
-      .buttons { grid-template-columns: 1fr; }
-      .card { padding: 15px; }
-    }
+    .note{font-size:14px;color:#a9c0c0}
+    footer{text-align:center;padding:25px;color:#8da6a6}
   </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">NM</div>
-  <h1>NELSON MEDIA</h1>
-  <p class="tagline">Habari • Burudani • Video • TikTok LIVE</p>
-
-  <div class="buttons">
-    <!-- BADILISHA LINK HII KUWA LINK YAKO YA TIKTOK -->
-    <a class="btn live" href="https://www.tiktok.com/@nelsonquestion" target="_blank" rel="noopener">
-      🔴 Tazama TikTok LIVE
-    </a>
-
-    <!-- BADILISHA NAMBA HII KUWA NAMBA YAKO YA WHATSAPP -->
-    <a class="btn wa" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener">
-      💬 Wasiliana WhatsApp
-    </a>
-  </div>
+  <h1>🎬 NELSON MEDIA</h1>
+  <p>Videos • TikTok LIVE • WhatsApp • Taarifa</p>
 </header>
 
-<main class="container">
+<nav>
+  <a href="#home">Home</a>
+  <a href="#videos">Videos</a>
+  <a href="#live">TikTok LIVE</a>
+  <a href="#whatsapp">WhatsApp</a>
+</nav>
 
-  <section>
-    <h2 class="title">🔴 TikTok LIVE</h2>
-    <div class="card live-box">
-      <h3><span class="live-dot"></span>LIVE</h3>
-      <p class="small" style="margin:10px 0 18px;">
-        Bonyeza hapa kwenda kwenye TikTok LIVE ya NELSON MEDIA.
-      </p>
-
-      <!-- BADILISHA LINK HII KUWA LINK YA ACCOUNT/LIVE YAKO -->
-      <a class="btn live" href="https://www.tiktok.com/@nelsonquestion" target="_blank" rel="noopener">
-        Fungua TikTok LIVE
-      </a>
+<main>
+  <section class="hero" id="home">
+    <h2>Karibu NELSON MEDIA</h2>
+    <p>Tazama video na fuatilia maudhui yangu hapa.</p>
+    <div class="buttons">
+      <a class="btn tiktok" href="https://www.tiktok.com/" target="_blank">🎵 TikTok</a>
+      <a class="btn whatsapp" href="https://wa.me/" target="_blank">💬 WhatsApp</a>
     </div>
   </section>
 
-  <section>
-    <h2 class="title">🎥 Video</h2>
+  <section class="card" id="videos">
+    <h2>🎬 Videos</h2>
+
+    <!--
+      JINSI YA KUONGEZA VIDEO BAADAYE:
+      1. Tengeneza folder linaloitwa "videos" kwenye GitHub.
+      2. Upload video yako ndani ya folder hilo.
+      3. Nakili mfano huu na badili jina la video:
+
+      <video controls>
+        <source src="videos/jina-la-video.mp4" type="video/mp4">
+      </video>
+
+      Unaweza kuongeza video nyingi kwa kurudia <video>...</video>.
+    -->
 
     <div class="video-grid">
-
-      <div class="card">
-        <!-- Weka video yako kwenye folder "videos" na iite video1.mp4 -->
-        <video controls playsinline preload="metadata">
-          <source src="videos/video1.mp4" type="video/mp4">
-          Simu yako haijaweza kucheza video hii.
-        </video>
-        <p class="video-title">Video ya NELSON MEDIA 1</p>
-        <p class="small">Badilisha jina na faili la video unalotaka.</p>
-      </div>
-
-      <div class="card">
-        <video controls playsinline preload="metadata">
-          <source src="videos/video2.mp4" type="video/mp4">
-          Simu yako haijaweza kucheza video hii.
-        </video>
-        <p class="video-title">Video ya NELSON MEDIA 2</p>
-        <p class="small">Weka video nyingine hapa.</p>
-      </div>
-
-      <div class="card">
-        <video controls playsinline preload="metadata">
-          <source src="videos/video3.mp4" type="video/mp4">
-          Simu yako haijaweza kucheza video hii.
-        </video>
-        <p class="video-title">Video ya NELSON MEDIA 3</p>
-        <p class="small">Weka video nyingine hapa.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <h2 class="title">📲 Tufuate</h2>
-    <div class="card">
-      <div class="buttons" style="margin:0;">
-        <!-- BADILISHA LINKS HIZI -->
-        <a class="btn" href="https://www.tiktok.com/@nelsonquestion" target="_blank" rel="noopener">🎵 TikTok</a>
-        <a class="btn" href="https://www.facebook.com/" target="_blank" rel="noopener">📘 Facebook</a>
-        <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
-        <a class="btn wa" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <!-- VIDEO YA KWANZA YA KUONGEZA BAADAYE -->
+      <div class="empty">
+        <strong>Video zako zitaonekana hapa</strong>
+        <p>Upload video kwenye folder <b>videos</b> la GitHub, kisha ongeza code ya video kama ilivyoelezwa hapo juu.</p>
       </div>
     </div>
   </section>
 
+  <section class="card" id="live">
+    <h2>🔴 TikTok LIVE</h2>
+    <p>Bonyeza hapa kwenda TikTok na kutazama LIVE ukiwa unaendelea live.</p>
+    <a class="btn tiktok" href="https://www.tiktok.com/" target="_blank">Fungua TikTok LIVE</a>
+  </section>
+
+  <section class="card" id="whatsapp">
+    <h2>💬 WhatsApp</h2>
+    <p>Wasiliana nami kupitia WhatsApp.</p>
+    <!-- BADILI namba hapo chini kuweka namba yako yenye country code, bila + -->
+    <a class="btn whatsapp" href="https://wa.me/255000000000" target="_blank">Tuma WhatsApp</a>
+  </section>
+
+  <section class="card">
+    <h2>📱 Preview ya Video</h2>
+    <p class="note">
+      Sehemu hii ni ya ku-preview video kwenye simu yako tu. Video haipandishwi yenyewe
+      kwenye GitHub. Ili iwe online kwa kila mtu, upload video kwenye folder la
+      <b>videos</b> la GitHub.
+    </p>
+    <input type="file" id="videoPicker" accept="video/*">
+    <div id="preview" style="margin-top:15px"></div>
+  </section>
 </main>
 
 <footer>
-  <p>© 2026 NELSON MEDIA. Haki zote zimehifadhiwa.</p>
+  © 2026 NELSON MEDIA
 </footer>
+
+<script>
+  const picker = document.getElementById("videoPicker");
+  const preview = document.getElementById("preview");
+
+  picker.addEventListener("change", function () {
+    preview.innerHTML = "";
+    const file = this.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+    const video = document.createElement("video");
+    video.controls = true;
+    video.src = url;
+    video.style.width = "100%";
+    video.style.borderRadius = "12px";
+    preview.appendChild(video);
+  });
+</script>
 
 </body>
 </html>
