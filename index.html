@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NELSON MEDIA</title>
+  <meta name="description" content="NELSON MEDIA - TikTok LIVE, video na mawasiliano ya WhatsApp.">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #080b10;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .container { width: min(920px, 92%); margin: auto; }
+
+    header {
+      padding: 55px 20px 35px;
+      text-align: center;
+      background: linear-gradient(135deg, #111827, #080b10);
+      border-bottom: 1px solid #26303d;
+    }
+    .logo {
+      width: 82px; height: 82px; margin: 0 auto 15px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: #fff; color: #080b10;
+      font-weight: 900; font-size: 25px;
+    }
+    h1 { font-size: clamp(32px, 8vw, 58px); letter-spacing: 2px; }
+    .tagline { color: #aeb8c6; margin-top: 8px; }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 25px 0;
+    }
+    .btn {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      color: white;
+      background: #151c26;
+      border: 1px solid #303b4b;
+      transition: .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .live { background: #e91e63; border-color: #e91e63; }
+    .wa { background: #128c4a; border-color: #128c4a; }
+
+    section { padding: 32px 0; }
+    .title { font-size: 27px; margin-bottom: 15px; }
+    .card {
+      background: #10151d;
+      border: 1px solid #293341;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    .live-box {
+      text-align: center;
+      padding: 28px 18px;
+      background: linear-gradient(135deg, #1a1118, #10151d);
+    }
+    .live-dot {
+      display: inline-block;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #ff1744;
+      margin-right: 7px;
+      box-shadow: 0 0 12px #ff1744;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    video {
+      width: 100%;
+      border-radius: 13px;
+      background: #000;
+      display: block;
+    }
+    .video-title { margin-top: 10px; font-weight: bold; }
+    .small { color: #9ba7b6; font-size: 14px; }
+
+    footer {
+      text-align: center;
+      padding: 35px 15px;
+      border-top: 1px solid #26303d;
+      color: #8d98a7;
+    }
+
+    @media (max-width: 500px) {
+      header { padding-top: 40px; }
+      .buttons { grid-template-columns: 1fr; }
+      .card { padding: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">NM</div>
+  <h1>NELSON MEDIA</h1>
+  <p class="tagline">Habari • Burudani • Video • TikTok LIVE</p>
+
+  <div class="buttons">
+    <!-- BADILISHA LINK HII KUWA LINK YAKO YA TIKTOK -->
+    <a class="btn live" href="https://www.tiktok.com/@nelsonquestion" target="_blank" rel="noopener">
+      🔴 Tazama TikTok LIVE
+    </a>
+
+    <!-- BADILISHA NAMBA HII KUWA NAMBA YAKO YA WHATSAPP -->
+    <a class="btn wa" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener">
+      💬 Wasiliana WhatsApp
+    </a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section>
+    <h2 class="title">🔴 TikTok LIVE</h2>
+    <div class="card live-box">
+      <h3><span class="live-dot"></span>LIVE</h3>
+      <p class="small" style="margin:10px 0 18px;">
+        Bonyeza hapa kwenda kwenye TikTok LIVE ya NELSON MEDIA.
+      </p>
+
+      <!-- BADILISHA LINK HII KUWA LINK YA ACCOUNT/LIVE YAKO -->
+      <a class="btn live" href="https://www.tiktok.com/@nelsonquestion" target="_blank" rel="noopener">
+        Fungua TikTok LIVE
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">🎥 Video</h2>
+
+    <div class="video-grid">
+
+      <div class="card">
+        <!-- Weka video yako kwenye folder "videos" na iite video1.mp4 -->
+        <video controls playsinline preload="metadata">
+          <source src="videos/video1.mp4" type="video/mp4">
+          Simu yako haijaweza kucheza video hii.
+        </video>
+        <p class="video-title">Video ya NELSON MEDIA 1</p>
+        <p class="small">Badilisha jina na faili la video unalotaka.</p>
+      </div>
+
+      <div class="card">
+        <video controls playsinline preload="metadata">
+          <source src="videos/video2.mp4" type="video/mp4">
+          Simu yako haijaweza kucheza video hii.
+        </video>
+        <p class="video-title">Video ya NELSON MEDIA 2</p>
+        <p class="small">Weka video nyingine hapa.</p>
+      </div>
+
+      <div class="card">
+        <video controls playsinline preload="metadata">
+          <source src="videos/video3.mp4" type="video/mp4">
+          Simu yako haijaweza kucheza video hii.
+        </video>
+        <p class="video-title">Video ya NELSON MEDIA 3</p>
+        <p class="small">Weka video nyingine hapa.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">📲 Tufuate</h2>
+    <div class="card">
+      <div class="buttons" style="margin:0;">
+        <!-- BADILISHA LINKS HIZI -->
+        <a class="btn" href="https://www.tiktok.com/@nelsonquestion" target="_blank" rel="noopener">🎵 TikTok</a>
+        <a class="btn" href="https://www.facebook.com/" target="_blank" rel="noopener">📘 Facebook</a>
+        <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
+        <a class="btn wa" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 NELSON MEDIA. Haki zote zimehifadhiwa.</p>
+</footer>
+
+</body>
+</html>
